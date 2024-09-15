@@ -1,11 +1,13 @@
-import logo from './borjascript logo.jpg';
-import './App.css';
+import logo from '../assets/img/borjascript logo.jpg';
+import '../assets/css/App.css';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 import { useState } from 'react';
 
 function App() {
 
   const [estaAbiertoNavbar, setEstaAbiertoNavbar] = useState(false);
+
+  const [currentComponent, setCurrentComponent] = useState('');
 
 
   return (
@@ -22,11 +24,8 @@ function App() {
         onClick={()=>setEstaAbiertoNavbar(!estaAbiertoNavbar)} />
         <Collapse isOpen={estaAbiertoNavbar} navbar>
         <Nav className='me-auto' navbar>
-          <NavItem>
-            <NavLink href='/home' className='custom-nav-item'>Primer Elemento</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='/about' className='custom-nav-item'>Segundo Elemento</NavLink>
+          <NavItem role='button'  >
+            <NavLink className='custom-nav-item'>Button</NavLink>
           </NavItem>
         </Nav>
 
@@ -37,6 +36,22 @@ function App() {
 
 
       </Navbar>
+
+      <div className='mt-3'>
+
+        {
+          (currentComponent == '')
+          ?
+          <div></div>
+          :
+          <div></div>
+        }
+
+
+      </div>
+
+
+
     </div>
   );
 }
