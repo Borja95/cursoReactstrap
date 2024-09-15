@@ -3,6 +3,8 @@ import '../assets/css/App.css';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 import { useState } from 'react';
 import ButtonComponent from '../components/ButtonComponent';
+import DropdownComponent from '../components/DropdownComponent';
+import ButtonGroupComponent from '../components/ButtonGroupComponent';
 
 function App() {
 
@@ -28,6 +30,16 @@ function App() {
           <NavItem role='button'  >
             <NavLink className='custom-nav-item' onClick={()=>setCurrentComponent('ButtonComponent')}>Button</NavLink>
           </NavItem>
+
+          <NavItem role='button'  >
+            <NavLink className='custom-nav-item' onClick={()=>setCurrentComponent('DropdownComponent')}>Dropdown</NavLink>
+          </NavItem>
+
+
+          <NavItem role='button'  >
+            <NavLink className='custom-nav-item' onClick={()=>setCurrentComponent('ButtonGroupComponent')}>ButtonGroup</NavLink>
+          </NavItem>
+
         </Nav>
 
         </Collapse>
@@ -45,6 +57,15 @@ function App() {
           ?
           <ButtonComponent />
           :
+          (currentComponent == 'DropdownComponent')
+          ?
+          <DropdownComponent />
+          :
+          (currentComponent == 'ButtonGroupComponent')
+          ?
+          <ButtonGroupComponent />
+          :
+
           <div></div>
         }
 
