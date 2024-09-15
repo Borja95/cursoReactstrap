@@ -51,3 +51,7 @@
   color: white !important;
   opacity: 0.7;
 }
+
+.custom-button{
+  font-weight: bold !important;
+}

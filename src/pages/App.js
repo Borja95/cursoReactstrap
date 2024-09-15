@@ -2,6 +2,7 @@ import logo from '../assets/img/borjascript logo.jpg';
 import '../assets/css/App.css';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from 'reactstrap';
 import { useState } from 'react';
+import ButtonComponent from '../components/ButtonComponent';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar  fixed='top' expand='sm' className='custom-navbar'>
+      <Navbar  expand='sm' className='custom-navbar'>
 
       <NavbarBrand href='https://www.youtube.com/@abj95100?sub_confirmation=1' target='blank'>
           <img src={logo} width={30} height={30} aria-label='Logo Borjascript'/>
@@ -25,7 +26,7 @@ function App() {
         <Collapse isOpen={estaAbiertoNavbar} navbar>
         <Nav className='me-auto' navbar>
           <NavItem role='button'  >
-            <NavLink className='custom-nav-item'>Button</NavLink>
+            <NavLink className='custom-nav-item' onClick={()=>setCurrentComponent('ButtonComponent')}>Button</NavLink>
           </NavItem>
         </Nav>
 
@@ -40,9 +41,9 @@ function App() {
       <div className='mt-3'>
 
         {
-          (currentComponent == '')
+          (currentComponent == 'ButtonComponent')
           ?
-          <div></div>
+          <ButtonComponent />
           :
           <div></div>
         }
